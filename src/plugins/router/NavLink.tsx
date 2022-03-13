@@ -18,7 +18,5 @@ export function NavLink(props: NavLinkProps) {
         window.dispatchEvent(new Event("popstate"));
     }
 
-    // location.pathname === href
-
     return <a {...props} onClick={onClick} />;
 }

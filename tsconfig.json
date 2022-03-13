@@ -5,7 +5,6 @@
         "noEmitOnError": true,
         "noImplicitAny": true,
         "sourceMap": true,
-        "allowSyntheticDefaultImports": true,
         "jsx": "react-jsx",
         "jsxImportSource": "preact",
         "paths": {
