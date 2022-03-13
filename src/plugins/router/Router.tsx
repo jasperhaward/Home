@@ -1,17 +1,35 @@
 import type { ComponentChildren } from "preact";
+import { useState, useEffect } from "preact/hooks";
+import { NavContext } from "./NavContext";
 
 export interface RouterProps {
     children: ComponentChildren;
 }
 
 export function Router({ children }: RouterProps) {
-    if (history.push) {
-        throw new Error("More than one instance of Router mounted.");
+    const [path, setPath] = useState(location.pathname);
+
+    useEffect(() => {
+        window.addEventListener("popstate", onPopStateChange);
+
+        return () => window.removeEventListener("popstate", onPopStateChange);
+    }, [path]);
+
+    function onPopStateChange(event: PopStateEvent) {
+        const { location } = event.currentTarget as Window;
+
+        if (location.pathname !== path) {
+            setPath(location.pathname);
+        }
     }
 
-    history.push = (path) => {
-        history.pushState(null, null, path);
-    };
+    if (!history.push) {
+        history.push = (path) => {
+            history.pushState(null, null, path);
+        };
+    }
 
-    return <>{children}</>;
+    return (
+        <NavContext.Provider value={{ path }}>{children}</NavContext.Provider>
+    );
 }

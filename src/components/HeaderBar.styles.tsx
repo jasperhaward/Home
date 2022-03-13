@@ -21,20 +21,20 @@ export const HeaderBar = styled<HeaderBarProps>("header")`
 
 export interface HeaderBarLinkProps {
     href: string;
-    active: boolean;
     children: string;
 }
 
 export const HeaderBarLink = styled<HeaderBarLinkProps>(NavLink)`
     padding: 10px;
-    color: ${(props) => (props.active ? colours.white : colours.grey)};
+    color: ${colours.grey};
     font-size: ${fonts.size.xs};
     letter-spacing: ${fonts.spacing.narrow};
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &[type="active"] {
         color: ${colours.white};
     }
 `;

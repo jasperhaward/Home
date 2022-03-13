@@ -1,5 +1,6 @@
 import { FunctionComponent } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useContext } from "preact/hooks";
+import { NavContext } from "./NavContext";
 
 export interface RouteComponentProps {
     history: {
@@ -14,21 +15,7 @@ export interface RouteProps {
 }
 
 export function Route({ route, component: Component }: RouteProps) {
-    const [path, setPath] = useState(location.pathname);
-
-    useEffect(() => {
-        window.addEventListener("popstate", onPopstateChange);
-
-        return () => window.removeEventListener("popstate", onPopstateChange);
-    }, [path]);
-
-    function onPopstateChange(event: PopStateEvent) {
-        const { location } = event.currentTarget as Window;
-
-        if (location.pathname !== path) {
-            setPath(location.pathname);
-        }
-    }
+    const { path } = useContext(NavContext);
 
     return (
         path === route && (
