@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact",
+        "paths": {
+            "@components": ["./src/components/index.tsx"],
+            "@plugins/*": ["./src/plugins/*"],
+            "@routes/*": ["./src/routes/*"],
+            "@styles": ["./src/styles/index.tsx"],
+        },
+    },
+    "include": ["src/**/*"],
+}

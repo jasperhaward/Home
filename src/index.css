@@ -1,0 +1,16 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: "proxima-nova";
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("/images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+}
