@@ -26,7 +26,7 @@ export interface TitleProps {
 export const Title = styled<TitleProps>("div")`
     font-size: 4em;
     font-weight: ${fonts.weight.light};
-    letter-spacing: ${fonts.spacing.wide};
+    letter-spacing: ${fonts.spacing.xWide};
 `;
 
 // SubTitle

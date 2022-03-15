@@ -15,5 +15,6 @@ export const fonts = {
         narrow: "0.7px",
         normal: "0.96px",
         wide: "1.4px",
+        xWide: "10px",
     },
 };
