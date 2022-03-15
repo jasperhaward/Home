@@ -14,6 +14,6 @@ export const fonts = {
     spacing: {
         narrow: "0.7px",
         normal: "0.96px",
-        wide: "1.4ppx",
+        wide: "1.4px",
     },
 };

@@ -24,11 +24,9 @@ export interface TitleProps {
 }
 
 export const Title = styled<TitleProps>("div")`
-    line-height: 60px;
-    font-size: 50px;
+    font-size: 4em;
     font-weight: ${fonts.weight.light};
-    margin-right: -30px;
-    letter-spacing: 30px;
+    letter-spacing: ${fonts.spacing.wide};
 `;
 
 // SubTitle
